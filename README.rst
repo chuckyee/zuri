@@ -18,15 +18,17 @@ zuri
 
 Posterior distributions for common ML metrics
 
+Zuri helps you:
+
+* compute uncertainty bounds of your model's performance
+* determine whether one model is better than another
+* choose the amount of test data you need (power analysis)
+
+The metrics supported are (binary) accuracy, precision, recall and :math:`F_1`.
 
 * Free software: MIT license
 * Documentation: https://zuri.readthedocs.io.
 
-
-Features
---------
-
-* TODO
 
 Credits
 -------
