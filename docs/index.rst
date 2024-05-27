@@ -13,7 +13,7 @@ The metrics supported are (binary) accuracy, precision, recall and :math:`F_1`.
 
 
 Quickstart
---------------------------------------
+----------
 
 Upper and lower bounds on model performance:
 
@@ -31,7 +31,7 @@ Upper and lower bounds on model performance:
    ci_lower, ci_upper = f1.interval(confidence=0.95)
 
 
-Comparing whether my new model is better than the old:
+Probability that the new model is better than the old:
 
 .. code-block:: python
 
@@ -48,24 +48,31 @@ Comparing whether my new model is better than the old:
    print(f"\nProbability that F1 score of cm1 is larger than cm2: {probability:.2f}")
 
 
-How much test data do I need to collect to hit my target confidence level?
+How much test data needs to be collected so that the uncertainty in the
+reported test metric is sufficiently small?
 
 .. code-block:: python
 
    from zuri import power
 
-   # TODO
-   pass
+   power.f1(
+       precision=0.8,   # guess for model precision
+       recall=0.8,      # guess for model recall
+       threshold=0.75,  # value F1 must exceed
+       alpha=0.95,      # confidence level
+       beta=0.8         # proportion of experiments deemed significant
+   )
 
+
+Contents
+========
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    installation
    usage
-   theory
-   modules
+   API Reference <modules>
    contributing
    authors
    history
