@@ -72,6 +72,7 @@ Contents
 
    installation
    usage
+   concepts
    API Reference <modules>
    contributing
    authors
